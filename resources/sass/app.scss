@@ -11,13 +11,6 @@ body{
     background-color: #f4f4f4;
 }
 
-//メディアクエリ挿入
-@mixin media_query($width){
-	@media screen and (max-width: $width+px){
-		@content;
-	}
-}
-
 .header{
     background-color: #333;
     padding: 16px 0;
