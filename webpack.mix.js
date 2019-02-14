@@ -12,4 +12,31 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .vue('resources/js/vueapp.js', 'public/js')
+   .sass('resources/sass/app.scss', 'public/css')
+   .sourceMaps()
+   .options({
+      processCssUrls: false,
+      postCss: [
+        require('css-mqpacker')()
+      ],
+      autoprefixer: {
+        browsers: ['last 2 versions'],
+        options: {
+          grid: true,
+        }
+      }
+   });
+   
+    mix.webpackConfig({ devtool: "inline-source-map" });
+
+
+mix.browserSync({
+    server: 'public',
+    proxy: false,
+    files: [
+        'public/**/*.html',
+        'public/js/*.js',
+        'public/css/*.css',
+    ]
+})
