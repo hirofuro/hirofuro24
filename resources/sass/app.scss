@@ -19,10 +19,19 @@ body{
         font-size: 2rem;
         color: #fff;
         text-align: center;
+        
+        @media screen and (max-width: 1000px) {
+        	color: #ff0;
+        }
     }
 }
 
 .main{
+    font-size: 1.6rem;
     padding: 24px 0;
     text-align: center;
+    
+    @media screen and (max-width: 1000px) {
+    	color: #00f;
+    }
 }
